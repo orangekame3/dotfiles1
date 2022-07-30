@@ -8,8 +8,7 @@ sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.18.4.linux-amd64.ta
 rm go1.18.4.linux-amd64.tar.gz
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-zsh
+~/.fzf/install --all --no-bash --no-fish
 # [satarship]
 install_starship() {
     # Automatically install/update starship
