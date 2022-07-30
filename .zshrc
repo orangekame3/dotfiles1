@@ -5,9 +5,9 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+#   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# fi
 # fzf function
 # command history with fzf
 function select-history() {
@@ -47,11 +47,11 @@ fbr() {
 }
 zle -N fbr
 bindkey '^b' fbr
-. ~/z/z.sh
+. ~/dotfiles/z/z.sh
 # Customize to your needs...
-autoload -Uz promptinit
-promptinit
-prompt pure
+# autoload -Uz promptinit
+# promptinit
+# prompt pure
 # git
 alias g="git"
 alias gl="git l"
@@ -66,26 +66,26 @@ alias wipe="git checkout . && git clean -fd"
 #alias co='git checkout $(git branch -a | tr -d " " |fzf --height 100% --prompt "CHECKOUT BRANCH>" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")'
 
 export PATH="$HOME/.local/bin:$PATH"
-source ~/.nvm/nvm.sh
-nvm use "v16.13.1"
-export PATH="$HOME/.tfenv/bin:$PATH"
-if [[ $(command -v exa) ]]; then
-  alias e='exa -a'
-  alias l=e
-  alias ls=e
-  alias ea='exa -a --icons'
-  alias la=ea
-  alias ee='exa -aal --icons'
-  alias ll=ee
-  alias et='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
-  alias lt=et
-  alias eta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less -r'
-  alias lta=eta
-fi
-source ~/.zplug/init.zsh
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-autosuggestions", defer:2
-export PATH="$HOME/lib/flutter/bin:$PATH"
+# source ~/.nvm/nvm.sh
+# nvm use "v16.13.1"
+# export PATH="$HOME/.tfenv/bin:$PATH"
+# if [[ $(command -v exa) ]]; then
+#   alias e='exa -a'
+#   alias l=e
+#   alias ls=e
+#   alias ea='exa -a --icons'
+#   alias la=ea
+#   alias ee='exa -aal --icons'
+#   alias ll=ee
+#   alias et='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+#   alias lt=et
+#   alias eta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less -r'
+#   alias lta=eta
+# fi
+# source ~/.zplug/init.zsh
+# zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug "zsh-users/zsh-autosuggestions", defer:2
+# export PATH="$HOME/lib/flutter/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
@@ -93,8 +93,8 @@ export PATH="$GOPATH/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - zsh)"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-alias -g copy='| pbcopy;pbpaste'
-alias now='date -Is'
+# eval "$(anyenv init - zsh)"
+# fpath+=${ZDOTDIR:-~}/.zsh_functions
+# alias -g copy='| pbcopy;pbpaste'
+# alias now='date -Is'
 eval "$(starship init zsh)"
