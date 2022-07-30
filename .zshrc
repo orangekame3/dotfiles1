@@ -46,7 +46,7 @@ fbr() {
   git checkout $(git branch -a | tr -d " " | fzf --height 100% --prompt "CHECKOUT BRANCH>" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")
 }
 zle -N fbr
-bindkey '^b' fbr
+bindkey '^b' fbrs
 . ~/dotfiles/z/z.sh
 # Customize to your needs...
 # autoload -Uz promptinit
