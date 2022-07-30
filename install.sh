@@ -8,7 +8,7 @@ mkdir ~./lobal/bin
 # [satarship]
 install_starship() {
     # Automatically install/update starship
-    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir ~/.local/bin --yes
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 }
 
 # Automatically install starship if not exists
