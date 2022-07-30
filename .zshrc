@@ -1,13 +1,3 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-# Source Prezto.
-# if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-#   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-# fi
 # fzf function
 # command history with fzf
 function select-history() {
@@ -34,24 +24,14 @@ fzf-z-search() {
 }
 zle -N fzf-z-search
 bindkey '^f' fzf-z-search
-# fbr - checkout git branch
-#fbr() {
-#  local branches branch
-#  branches=$(git branch -vv) &&
-#  branch=$(echo "$branches" | fzf +m) &&
-#  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-#}
-#
+
 fbr() {
   git checkout $(git branch -a | tr -d " " | fzf --height 100% --prompt "CHECKOUT BRANCH>" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")
 }
 zle -N fbr
 bindkey '^b' fbrs
 . ~/dotfiles/z/z.sh
-# Customize to your needs...
-# autoload -Uz promptinit
-# promptinit
-# prompt pure
+#
 # git
 alias g="git"
 alias gl="git l"
