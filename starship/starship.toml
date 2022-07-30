@@ -8,6 +8,8 @@ $git_status\
 $cmd_duration\
 $line_break\
 $python\
+$golang\
+$rust\
 $character"""
 
 [directory]
@@ -40,5 +42,10 @@ format = "[$duration]($style) "
 style = "yellow"
 
 [python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
+format = 'via [$symbol]($style)'
+
+[golang]
+format = 'via [$symbol]($style)'
+
+[rust]
+symbol = "rs "
