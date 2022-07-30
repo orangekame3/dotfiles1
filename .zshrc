@@ -15,22 +15,22 @@ function select-history() {
   CURSOR=$#BUFFER
 }
 function fzf-history-widget() {
-    local tac=${commands[tac]:-"tail -r"}
-    BUFFER=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | sed 's/ *[0-9]* *//' | eval $tac | awk '!a[$0]++' | fzf +s)
-    CURSOR=$#BUFFER
-    zle clear-screen
+  local tac=${commands[tac]:-"tail -r"}
+  BUFFER=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | sed 's/ *[0-9]* *//' | eval $tac | awk '!a[$0]++' | fzf +s)
+  CURSOR=$#BUFFER
+  zle clear-screen
 }
-zle     -N   fzf-history-widget
+zle -N fzf-history-widget
 bindkey '^R' fzf-history-widget
 # fzf-z-search move directory with z
 fzf-z-search() {
-    local res=$(z | sort -rn | cut -c 12- | fzf --preview 'tree -C {} | head -200')
-    if [ -n "$res" ]; then
-        BUFFER+="cd $res"
-        zle accept-line
-    else
-        return 1
-    fi
+  local res=$(z | sort -rn | cut -c 12- | fzf --preview 'tree -C {} | head -200')
+  if [ -n "$res" ]; then
+    BUFFER+="cd $res"
+    zle accept-line
+  else
+    return 1
+  fi
 }
 zle -N fzf-z-search
 bindkey '^f' fzf-z-search
@@ -42,8 +42,8 @@ bindkey '^f' fzf-z-search
 #  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 #}
 #
-fbr(){
-        git checkout $(git branch -a | tr -d " " |fzf --height 100% --prompt "CHECKOUT BRANCH>" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")
+fbr() {
+  git checkout $(git branch -a | tr -d " " | fzf --height 100% --prompt "CHECKOUT BRANCH>" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")
 }
 zle -N fbr
 bindkey '^b' fbr
@@ -96,4 +96,5 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - zsh)"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 alias -g copy='| pbcopy;pbpaste'
-alias now='date -Is' 
+alias now='date -Is'
+eval "$(starship init zsh)"
