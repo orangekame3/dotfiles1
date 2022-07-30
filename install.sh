@@ -2,6 +2,7 @@
 
 # zsh
 sudo apt install zsh
+sudo apt install tree
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 zsh
