@@ -31,7 +31,7 @@ fbr() {
 zle -N fbr
 bindkey '^b' fbrs
 . ~/dotfiles/z/z.sh
-#
+#s
 # git
 alias g="git"
 alias gl="git l"
@@ -46,8 +46,8 @@ alias wipe="git checkout . && git clean -fd"
 #alias co='git checkout $(git branch -a | tr -d " " |fzf --height 100% --prompt "CHECKOUT BRANCH>" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")'
 
 export PATH="$HOME/.local/bin:$PATH"
-# source ~/.nvm/nvm.sh
-# nvm use "v16.13.1"
+source ~/.nvm/nvm.sh
+#nvm use "v16.13.1"
 # export PATH="$HOME/.tfenv/bin:$PATH"
 # if [[ $(command -v exa) ]]; then
 #   alias e='exa -a'
