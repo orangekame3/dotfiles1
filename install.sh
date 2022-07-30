@@ -3,7 +3,8 @@
 # zsh
 sudo apt install zsh
 chsh -s /bin/zsh
-mkdir ~./local/bin
+mkdir ~./local/
+mkdir ~./lobal/bin
 # [satarship]
 install_starship() {
     # Automatically install/update starship
