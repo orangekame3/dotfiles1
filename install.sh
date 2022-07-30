@@ -3,6 +3,7 @@
 # zsh
 sudo apt install zsh
 chsh -s /usr/bin/zsh
+zsh
 # [satarship]
 install_starship() {
     # Automatically install/update starship
