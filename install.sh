@@ -6,7 +6,7 @@ sudo apt install tree
 wget https://go.dev/dl/go1.18.4.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.18.4.linux-amd64.tar.gz
 rm go1.18.4.linux-amd64.tar.gz
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all --no-bash --no-fish
 # [satarship]
