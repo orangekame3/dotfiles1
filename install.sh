@@ -17,3 +17,4 @@ if ! type starship >/dev/null; then
     install_starship
 fi
 chsh -s /usr/bin/zsh
+reboot
