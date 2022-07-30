@@ -15,8 +15,15 @@ install_starship() {
     sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 }
 
-# Automatically install starship if not exists
+# Automatically install starship if not existss
 if ! type starship >/dev/null; then
     install_starship
 fi
 chsh -s /usr/bin/zsh
+
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >>~/.zshrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >>~/.zshrc
+echo 'eval "$(pyenv init -)"' >>~/.zshrc
+pyenv install 3.10.4
+pyenv global 3.10.4
