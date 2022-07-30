@@ -23,3 +23,4 @@ for f in .??*; do
     # シンボリックリンクを貼る
     ln -snfv ${PWD}/"$f" ~/
 done
+ln -snfv ./starship/starship.toml ~/.config/starship.toml
